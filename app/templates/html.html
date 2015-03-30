@@ -1,0 +1,9 @@
+<p>
+    Cookie:
+    {% if 'cookie' in request.cookies %}
+      {{ request.cookies['cookie'] }}
+    {% else %}
+      not set
+    {% endif %}
+</p>
+<h1>Hello HTML!</h1>
