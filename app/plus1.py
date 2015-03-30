@@ -2,7 +2,6 @@ from flask import Flask, render_template, session
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'top secret!'
 
-
 @app.route('/plus1')
 def index():
     if 'count' not in session:
