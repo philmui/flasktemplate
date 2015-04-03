@@ -1,4 +1,5 @@
-flask-example
-=============
+Flask template
+==============
 
-A sample Flask app
+A sample Flask app template
+
