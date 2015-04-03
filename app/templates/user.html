@@ -8,7 +8,9 @@
     <div class="col-md-3">
         {{ wtf.quick_form(form) }}
         {% if name %}
-          <h1>Hello, {{ name }}!</h1>
+          <h1>Hello, {{ name }}
+            {% if {{ not newuser }} %}again{% endif%}
+            !</h1>
         {% endif %}
     </div>
   </div>
