@@ -4,4 +4,4 @@ FROM python:3-onbuild
 
 EXPOSE 8000
 
-CMD [ "gunicorn", "-c", "conf/gunicorn.conf", "app.hello:app" ]
+CMD [ "gunicorn", "-c", "conf/gunicorn_conf.py", "app.hello:app" ]
