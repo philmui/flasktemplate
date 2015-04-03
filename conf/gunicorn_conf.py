@@ -5,7 +5,7 @@ workers = multiprocessing.cpu_count() * 2 + 1
 
 # spew = True
 debug = True
-pidfile = "/var/run/gunicorn.pid"
+# pidfile = "/var/run/gunicorn.pid"
 loglevel = "debug"
-accesslog = "/var/log/gunicorn_access.log"
-errorlog = "/var/log/gunicorn_error.log"
+accesslog = "-"
+errorlog = "-"
