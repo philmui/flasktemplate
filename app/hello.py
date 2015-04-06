@@ -5,12 +5,14 @@ from flask.ext.sqlalchemy import SQLAlchemy
 from flask.ext.wtf import Form
 from wtforms import StringField, SubmitField
 from wtforms.validators import Required, Length
+import logging
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'top secret!'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.sqlite3'
 bootstrap = Bootstrap(app)
 db = SQLAlchemy(app)
+logger = logging.getLogger('hello')
 
 class NameForm(Form):
     name = StringField("What is your name?",
@@ -58,5 +60,10 @@ def index():
 #      app.url_map
 #
 if __name__ == '__main__':
-    db.create_all()
+    try:
+        logger.info("Trying to create all DBs ...")
+        db.create_all()
+    except:
+        logger.warn("DBs have already been created!")
+        pass
     app.run(debug=True)
